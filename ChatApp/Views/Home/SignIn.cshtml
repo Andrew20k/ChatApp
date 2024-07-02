@@ -6,16 +6,17 @@
 }
 
 <div class="text-center">
-    <h2>Login Page</h2>
+    <h1>Witaj w <b>ChatApp</b>.</h1><br>
+    <h3>Wprowadź nazwę użytkownika by przejść do chat'u.</h3>
 </div>
 
 
 <form asp-action="SignIn" method="post" class="row">
-    <div class="col-12 col-md-6 offset-md-3">
-        <input class="form-control" asp-for="UserName" placeholder="Login"/>
+    <div class="col-12 col-md-6 offset-md-3 py-3">
+        <input class="form-control" asp-for="UserName" placeholder="Wprowadź nazwę..."/>
         <span asp-validation-for="UserName" class="text-danger"></span>
     </div>
     <div class="col-12 col-md-6 offset-md-3 py-3">
-        <button class="btn btn-success w-100">Login</button>
+        <button class="btn btn-success w-100">Zaloguj się</button>
     </div>
 </form>
