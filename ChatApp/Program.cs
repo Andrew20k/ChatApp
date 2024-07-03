@@ -1,4 +1,7 @@
 using ChatApp.Hub;
+using Microsoft.EntityFrameworkCore;
+using ChatApp.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
