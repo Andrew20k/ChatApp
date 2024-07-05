@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6d2e7620-ab84-4eb6-8207-93f88c4e9a97/resourceGroups/ChatAppGroup/providers/Microsoft.Web/sites/ChatApploT",
+    "appService.deploySubpath": "publish"
+}
