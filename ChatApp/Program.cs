@@ -2,7 +2,6 @@ using ChatApp.Hub;
 using Microsoft.EntityFrameworkCore;
 using ChatApp.Models;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,12 +14,17 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(hubOptions =>
+{
+    hubOptions.EnableDetailedErrors = true;
+});
 
-#if DEBUG
-mvc.AddRazorRuntimeCompilation();
-#endif
+// Register the ChatContext with Entity Framework Core
+builder.Services.AddDbContext<ChatContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Register the DatabaseManager
+builder.Services.AddScoped<IDatabaseManager, DatabaseManager>();
 
 var app = builder.Build();
 
